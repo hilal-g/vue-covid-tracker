@@ -20,7 +20,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### APIs
 
-https://covid19api.com
-https://covid19-api.com
-https://bootstrap-vue.org/docs/components/form-checkbox
+https://covid19api.com <br />
+https://covid19-api.com <br />
 

@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       loading: true,
-      title: 'Turkey',
+      title: 'Italy',
       dataDate: '',
       status: {},
       countries: [],
@@ -37,30 +37,16 @@ export default {
   },
   methods: {
     async fetchCovidData() {
-      const res = await fetch('https://api.covid19api.com/dayone/country/turkey');
+      const res = await fetch('https://api.covid19api.com/dayone/country/italy');
       const data = await res.json();
       return data;
     },
-    async fetchCountries() {
-      const res = await fetch('https://api.covid19api.com/countries');
-      const data = await res.json();
-      return data;
-    },
-    getCountryData(country) {
-      this.stats = country;
-      this.title = country.Country;
-    }
   },
   async created() {
     const data = await this.fetchCovidData();
-
-    //const countryData = await this.fetchCountries();
-    const countryData = [{"Country": "US"},
-                         {"Country": "Turkey"}];
     
     this.dataDate = data.Date;
     this.stats = data;
-    this.countries = countryData;
     this.loading = false;
   },
 };
