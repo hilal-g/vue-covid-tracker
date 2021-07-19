@@ -34,6 +34,7 @@ export default {
     align-items: center;
     font-size: 30px;
     font-weight: bold;
+    padding: 10px;
 }
 
 .date-time {

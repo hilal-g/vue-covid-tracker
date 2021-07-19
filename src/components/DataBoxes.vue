@@ -8,7 +8,7 @@
             </h3>
 
             <div class="box-font">
-                <span class="info-title">Active: </span>
+                <span class="info-title">Today: </span>
                 {{ numberWithCommas(stats.slice(-1)[0].Active) }}
             </div>
 
@@ -21,7 +21,7 @@
         <!-- BOX 2 -->
         <div class="box-2">
             <h3 class="box-title">
-                Survival Rates
+                Survival
             </h3>
 
             <div class="box-font">
@@ -36,6 +36,60 @@
         </div>
         
     </div>
+
+    <div class="survival-div">
+
+        <h3 class="survival-title">Survival Rates</h3>
+
+        <div class="rate-div">
+
+            <div class="death-percentage">
+                Death Percentage: 
+                <span class="num-span">
+                {{ Math.round(((stats.slice(-1)[0].Deaths)/(stats.slice(-1)[0].Deaths + stats.slice(-1)[0].Recovered) * 100) * 100) /100 }}%
+                </span>
+            </div>
+
+            <div class="recovery-percentage">
+                Recovery Percentage: 
+                <span class="num-span">
+                    {{ Math.round(((stats.slice(-1)[0].Recovered)/(stats.slice(-1)[0].Deaths + stats.slice(-1)[0].Recovered) * 100) * 100) /100 }}%
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="survival-div">
+
+        <h3 class="survival-title">Recent Comparison</h3>
+
+        <div class="rate-div">
+
+            <div class="death-percentage">
+                Cases Yesterday: 
+                <span class="num-span">
+                    {{ numberWithCommas(stats.slice(-2)[0].Active) }}
+                </span>
+            </div>
+
+            <div class="recovery-percentage">
+                Cases Last Week:
+                <span class="num-span">
+                    {{ numberWithCommas(stats.slice(-8)[0].Active) }}
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer class="footer">
+        Hilal G. | Current Year: {{ new Date().getFullYear() }}
+    </footer>
 </template>
 
 <script>
@@ -96,6 +150,59 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+}
+
+.rate-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.survival-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.death-percentage {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.recovery-percentage {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 30px;
+}
+
+.survival-div {
+    padding: 10px;
+}
+
+.num-span {
+    font-size: 40px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-size: 20px;
+    color: #e61b009d;
+}
+
+hr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 </style>
