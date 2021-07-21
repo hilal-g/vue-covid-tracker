@@ -83,6 +83,24 @@
 
         </div>
 
+        <div class="rate-div">
+
+            <div class="death-percentage">
+                Cases Last Month: 
+                <span class="num-span">
+                    {{ numberWithCommas(stats.slice(-31)[0].Active) }}
+                </span>
+            </div>
+
+            <div class="recovery-percentage">
+                Cases Last Year:
+                <span class="num-span">
+                    {{ numberWithCommas(stats.slice(-366)[0].Active) }}
+                </span>
+            </div>
+
+        </div>
+
     </div>
 
     <hr>

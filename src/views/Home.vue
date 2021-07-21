@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       loading: true,
-      title: 'Mongolia',
+      title: 'Turkey',
       dataDate: '',
       status: {},
       countries: [],
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     async fetchCovidData() {
-      const res = await fetch('https://api.covid19api.com/dayone/country/mongolia');
+      const res = await fetch('https://api.covid19api.com/dayone/country/turkey');
       const data = await res.json();
       return data;
     },
