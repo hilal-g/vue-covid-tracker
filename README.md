@@ -22,7 +22,7 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### APIs
+## APIs
 
 https://covid19api.com <br />
 https://covid19-api.com <br />
